@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Scratchpad Launcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Scratchpad Launcher</h1>
+    <p class="hint">Click + to add a link, or drag a hyperlink from a webpage onto a quadrant</p>
+  </header>
+
+  <div id="matrix">
+
+    <div class="quadrant q1" data-quadrant="urgent-important">
+      <div class="quadrant-header">
+        <div class="quadrant-label-wrap">
+          <div class="quadrant-label">Urgent &amp; Important</div>
+          <div class="quadrant-sublabel">Do First</div>
+        </div>
+        <button class="add-btn" data-quadrant="urgent-important">+</button>
+      </div>
+      <div class="links-container" id="links-urgent-important"></div>
+    </div>
+
+    <div class="quadrant q2" data-quadrant="not-urgent-important">
+      <div class="quadrant-header">
+        <div class="quadrant-label-wrap">
+          <div class="quadrant-label">Not Urgent &amp; Important</div>
+          <div class="quadrant-sublabel">Schedule</div>
+        </div>
+        <button class="add-btn" data-quadrant="not-urgent-important">+</button>
+      </div>
+      <div class="links-container" id="links-not-urgent-important"></div>
+    </div>
+
+    <div class="quadrant q3" data-quadrant="urgent-not-important">
+      <div class="quadrant-header">
+        <div class="quadrant-label-wrap">
+          <div class="quadrant-label">Urgent &amp; Not Important</div>
+          <div class="quadrant-sublabel">Delegate</div>
+        </div>
+        <button class="add-btn" data-quadrant="urgent-not-important">+</button>
+      </div>
+      <div class="links-container" id="links-urgent-not-important"></div>
+    </div>
+
+    <div class="quadrant q4" data-quadrant="not-urgent-not-important">
+      <div class="quadrant-header">
+        <div class="quadrant-label-wrap">
+          <div class="quadrant-label">Not Urgent &amp; Not Important</div>
+          <div class="quadrant-sublabel">Eliminate</div>
+        </div>
+        <button class="add-btn" data-quadrant="not-urgent-not-important">+</button>
+      </div>
+      <div class="links-container" id="links-not-urgent-not-important"></div>
+    </div>
+
+  </div>
+
+  <!-- Add/name link modal -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <h3>Add link</h3>
+      <label class="modal-label">URL</label>
+      <input type="text" id="modal-url-input" placeholder="https://…" autocomplete="off" spellcheck="false">
+      <label class="modal-label">Display name</label>
+      <input type="text" id="modal-name" placeholder="Enter a display name…" autocomplete="off">
+      <div class="modal-buttons">
+        <button id="modal-cancel">Cancel</button>
+        <button id="modal-save">Add Link</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

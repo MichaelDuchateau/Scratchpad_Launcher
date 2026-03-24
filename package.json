@@ -1,0 +1,12 @@
+{
+  "name": "scratchpad-launcher",
+  "version": "1.0.0",
+  "description": "Eisenhower Matrix link launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "env -u ELECTRON_RUN_AS_NODE electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}
